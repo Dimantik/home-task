@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const User = require('./models/user');
 
-const port = 3000; 
+const port = 3002; 
 
 mongoose.Promise = global.Promise;
 
@@ -24,15 +24,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
-	User.find({}, (err, docs) => {
-		if (err) {
-			console.log(err);
-		}
-		res.send(docs);
-		
-	});
+	// User.find({}, (err, docs) => {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	}
+	// 	res.send(docs);
+
+	// });
 	
-	//res.sendFile('./public/view/main.html', { root: __dirname });
+	res.sendFile('./public/view/main.html', { root: __dirname });
 });
 
 app.get('/about', (req, res) => {
