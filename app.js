@@ -29,6 +29,7 @@ app.get('/main', (req, res) => {
 			console.log(err);
 		}
 		res.send(docs);
+		
 	});
 	
 	//res.sendFile('./public/view/main.html', { root: __dirname });
