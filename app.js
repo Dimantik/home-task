@@ -24,15 +24,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
-	// User.find({}, (err, docs) => {
-	// 	if (err) {
-	// 		console.log(err);
-	// 	}
-	// 	res.send(docs);
-
-	// });
-	
 	res.sendFile('./public/view/main.html', { root: __dirname });
+});
+
+app.get('/users', (req, res) => {
+	User.find({}, (err, docs) => {
+		if (err) {
+			console.log(err);
+		}
+		res.json(docs);
+	});
 });
 
 app.get('/about', (req, res) => {
